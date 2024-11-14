@@ -21,18 +21,27 @@ public class MainReto3 {
 		}while(fecha1.isAfter(fecha2));
 		
 		int difmeses = Funcion1.diferenciaMeses(fecha1, fecha2);
+		int corta = Integer.MAX_VALUE;
 		if(difmeses>=3) {
 		for(int i=0;i<difmeses;i++) {
 			String nombre = dimeNombre("Introduce un nombre", sc);
-			nombre.concat(nombre);
+			 if (nombre.length() < corta) {
+                 corta = nombre.length();
+             }
+			 System.out.println(nombre.startsWith("a"));
 		}
+		System.out.println(corta);
+		
 		}
 		else {
 			for(int j=0;j<4;j++) {
 				String nombre2 = dimeNombre("Introduce nombre", sc);
-				nombre2.concat(nombre2);
+				if (nombre2.length() < corta) {
+	                 corta = nombre2.length();
+	             }
 			}
 		}
+		
 		
 	}
 	
