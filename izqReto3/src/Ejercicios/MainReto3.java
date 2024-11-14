@@ -7,9 +7,21 @@ import java.util.Scanner;
 public class MainReto3 {
 
 	public static void main(String[] args) {
+		DateTimeFormatter formato1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		Scanner sc = new Scanner(System.in);
-		LocalDate fecha1 = dimeFecha("Introduce una fecha", sc);
-		LocalDate fecha2 = dimeFecha("Introduce una segunda fecha", sc);
+		LocalDate fecha1;
+		LocalDate fecha2;
+		do {
+			try {
+				fecha1 = dimeFecha("Introduce una fecha", sc);
+				fecha2 = dimeFecha("Introduce una segunda fecha", sc);
+			}
+			catch(Exception ex) {
+				
+			}
+		}while(fecha1.isAfter(fecha2));
+		
+		
 		
 	}
 
